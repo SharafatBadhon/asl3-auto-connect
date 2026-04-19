@@ -8,7 +8,7 @@ Wait for Asterisk: Ensures the Asterisk socket is active before executing comman
 
 Network Stability: Includes a 20-second delay for full network stabilization.
 
-Retry Logic: Intelligentup to 10-time retry mechanism with link verification.
+Retry Logic: Intelligent up to 10-time retry mechanism with link verification.
 
 Automated: Runs silently in the background as a system service.
 
