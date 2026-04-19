@@ -1,16 +1,7 @@
-STEP-1
-Open 'Terminal' & Run the command
-
-sudo nano /usr/local/bin/asl-autolink.sh
-
-(It will open Command Line Text Editor)
-
-STEP-2
-Paste this:
 #!/bin/bash
 
-NODE=(Your Node Number)
-TARGET=(Target Node Number)
+NODE=67028
+TARGET=67163
 
 # Wait for Asterisk socket
 while ! asterisk -rx "core show uptime" >/dev/null 2>&1
@@ -41,20 +32,3 @@ done
 
 echo "LINK FAILED AFTER RETRIES"
 exit 1
-
-STEP-3 (Save the file)
-Press in order:
-1. CTRL + X
-2. Press Y
-3. Press ENTER
-
-🔄 STEP-4 (Restart service)
-
-sudo systemctl restart asl-autolink.service
-
-📌 STEP-5 - Check logs (IMPORTANT)
-
-journalctl -u asl-autolink.service -b --no-pager
-
-🔁 STEP-6 (Reboot test)
-sudo reboot
