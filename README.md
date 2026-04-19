@@ -13,7 +13,7 @@ This project provides a robust bash script and systemd service to automatically 
 Run the following command to create the script file:
 ```bash
 sudo nano /usr/local/bin/asl-autolink.sh
-STEP 2: Paste the Script
+##STEP 2: Paste the Script
 Copy and paste the following code into the editor. Make sure to change the Node and Target numbers.
 
 Bash
@@ -60,7 +60,7 @@ Press Y
 
 Press ENTER
 
-STEP 4: Make the Script Executable
+##STEP 4: Make the Script Executable
 You need to give the system permission to run this script:
 
 Bash
@@ -80,4 +80,5 @@ Finally, reboot your system to test the auto-connect feature:
 
 Bash
 sudo reboot
+
 73! de S21BAD
