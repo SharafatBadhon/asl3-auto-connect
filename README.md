@@ -51,13 +51,14 @@ done
 
 echo "LINK FAILED AFTER RETRIES"
 exit 1
+
 STEP 3: Save the File
 To save and exit the nano editor, press:
 
 CTRL + X
-
+then
 Press Y
-
+then
 Press ENTER
 
 ##STEP 4: Make the Script Executable
@@ -65,16 +66,19 @@ You need to give the system permission to run this script:
 
 Bash
 sudo chmod +x /usr/local/bin/asl-autolink.sh
+
 STEP 5: Restart the Service
 To apply the changes, restart the service:
 
 Bash
 sudo systemctl restart asl-autolink.service
 STEP 6: Check Logs (IMPORTANT)
+
 Verify if the connection was successful by checking the logs:
 
 Bash
 journalctl -u asl-autolink.service -b --no-pager
+
 STEP 7: Reboot Test
 Finally, reboot your system to test the auto-connect feature:
 
