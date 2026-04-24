@@ -126,6 +126,15 @@ sudo systemctl start asl-autolink.service
 
 `sudo systemctl start asl-autolink.service`
 
+## STEP 8: Check if it connected
+Open Asterisk CLI:
+`sudo asterisk -rvvv`
+
+Then type:
+`rpt lstats 1999`
+
+👉 You should see your node linked to 27239
+
 ## Step 8: 📊 Monitoring & Testing
 Check Logs (IMPORTANT)
 
