@@ -1,8 +1,8 @@
-AllStarLink Node Auto-Connect Script (ASL3)
+# AllStarLink Node Auto-Connect Script (ASL3)
 
 This project provides a robust bash script and systemd service to automatically connect your AllStarLink (ASL3) node to a specific target upon system boot or network reconnection. Tested and verified on Raspberry Pi 3B+.
 
-🌟 Features
+# 🌟 Features
 
 Wait for Asterisk: Ensures the Asterisk socket is active before executing commands.
 
@@ -12,20 +12,20 @@ Retry Logic: Intelligent up to 10-time retry mechanism with link verification.
 
 Automated: Runs silently in the background as a system service.
 
-🛠 Installation Guide
+## 🛠 Installation Guide
 
-STEP 1: Create the Script File
+## STEP 1: Create the Script File
 
 Open your terminal and create the script file using the following command:
 
 sudo nano /usr/local/bin/asl-autolink.sh
 
 
-STEP 2: Paste the Script
+## STEP 2: Paste the Script
 
 Copy and paste the code below into the editor. Update the NODE and TARGET variables with your node numbers.
 
-#!/bin/bash
+` #!/bin/bash
 
 # Configuration
 NODE=67028
@@ -60,7 +60,7 @@ do
 done
 
 echo "LINK FAILED AFTER 10 RETRIES"
-exit 1
+exit 1 `
 
 
 STEP 3: Save and Exit
