@@ -107,12 +107,12 @@ WantedBy=multi-user.target
 
 Save and Exit as shown in Step 3.
 
-STEP 6: Activate the Service
-
+## STEP 6: Enable Service & Activate the Service
+```
 sudo systemctl daemon-reload
 sudo systemctl enable asl-autolink.service
-sudo systemctl restart asl-autolink.service
-
+sudo systemctl start asl-autolink.service
+```
 
 📊 Monitoring & Testing
 
