@@ -67,9 +67,9 @@ exit 1
 ```
 ⚠️ $${\color{red}IMPORTANT}$$ : Change these values:
 
-NODE=YOUR NODE NUMBER
+NODE= ENTER YOUR NODE NUMBER
 
-TARGET=TARGET NODE NUMBER
+TARGET=ENTER TARGET NODE NUMBER
 
 
 ## STEP 3: Save and Exit
@@ -115,7 +115,7 @@ WantedBy=multi-user.target
 
 Save and Exit as shown in Step 3.
 
-## STEP 6: Enable Service & Activate the Service
+## STEP 6: Enable & Activate the Service
 ```
 sudo systemctl daemon-reload
 sudo systemctl enable asl-autolink.service
@@ -128,14 +128,21 @@ sudo systemctl start asl-autolink.service
 
 ## STEP 8: Check if it connected
 Open Asterisk CLI:
+
 `sudo asterisk -rvvv`
 
 Then type:
-`rpt lstats 1999`
 
-👉 You should see your node linked to 27239
+`rpt lstats 67028`
 
-## Step 8: 📊 Monitoring & Testing
+ ### 👉 You should see something like that:
+
+| NODE  | PEER           | RECONNECTS | DIRECTION | CONNECT TIME | CONNECT STATE |
+| ----- | -------------- | ---------- | --------- | ------------ | ------------- |
+| 67163 |  xx.xxx.xxx.xxx | 0          | OUT       | 05:00:34:591 | ESTABLISHED   |
+
+
+## Step 9: 📊 Monitoring & Testing
 Check Logs (IMPORTANT)
 
 To see the real-time status of the connection:
@@ -143,7 +150,7 @@ To see the real-time status of the connection:
 `journalctl -u asl-autolink.service -b --no-pager`
 
 
-## Step 9: Reboot Test
+## Step 10: Reboot Test
 
 Perform a full test by rebooting your Pi:
 
