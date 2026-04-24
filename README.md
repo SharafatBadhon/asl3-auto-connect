@@ -18,37 +18,36 @@ Automated: Runs silently in the background as a system service.
 
 Open your terminal and create the script file using the following command:
 
-sudo nano /usr/local/bin/asl-autolink.sh
+`sudo nano /usr/local/bin/asl-autolink.sh`
 
 
 ## STEP 2: Paste the Script
 
 Copy and paste the code below into the editor. Update the NODE and TARGET variables with your node numbers.
 
-` #!/bin/bash
+```Bash
+#!/bin/bash
 
-# Configuration
-NODE=67028
-TARGET=67163
+NODE=(Your Node Number)
+TARGET=(Target Node Number)
 
-# Wait for Asterisk socket to be ready
+# Wait for Asterisk socket
 while ! asterisk -rx "core show uptime" >/dev/null 2>&1
 do
-    echo "Waiting for Asterisk..."
     sleep 5
 done
 
-# Wait for network stability
-echo "Waiting for network stability..."
+# Wait for node network stability
 sleep 20
 
-# Retry link until success
+# Retry link until success (VERY IMPORTANT)
 for i in {1..10}
 do
-    echo "Attempt $i: Linking $NODE to $TARGET"
     RESULT=$(asterisk -rx "rpt cmd $NODE ilink 3 $TARGET" 2>&1)
 
-    # Check link status
+    echo "$RESULT"
+
+    # Check if it worked
     asterisk -rx "rpt lstats $NODE" | grep "$TARGET" >/dev/null
 
     if [ $? -eq 0 ]; then
@@ -59,36 +58,39 @@ do
     sleep 10
 done
 
-echo "LINK FAILED AFTER 10 RETRIES"
-exit 1 `
+echo "LINK FAILED AFTER RETRIES"
+exit 1
+```
 
 
-STEP 3: Save and Exit
+
+## STEP 3: Save and Exit
 
 To save the changes in the nano editor:
 
-Press CTRL + X
+1. Press CTRL + X
 
-Press Y
+2. Press Y
 
-Press ENTER
+3. Press ENTER
 
-STEP 4: Set Executable Permissions
+## STEP 4: Set Executable Permissions
 
 Run this command to allow the system to execute the script:
 
-sudo chmod +x /usr/local/bin/asl-autolink.sh
+`sudo chmod +x /usr/local/bin/asl-autolink.sh`
 
 
-STEP 5: Create Systemd Service
+## STEP 5: Create Systemd Service
 
 Create a service file so the script runs automatically on boot:
 
-sudo nano /etc/systemd/system/asl-autolink.service
+`sudo nano /etc/systemd/system/asl-autolink.service`
 
 
 Paste the following configuration:
 
+```
 [Unit]
 Description=AllStarLink Auto-Connect Service
 After=asterisk.service
@@ -100,6 +102,7 @@ Restart=on-failure
 
 [Install]
 WantedBy=multi-user.target
+```
 
 
 Save and Exit as shown in Step 3.
