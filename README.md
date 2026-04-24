@@ -4,17 +4,17 @@ This project provides a robust bash script and systemd service to automatically 
 
 # 🌟 Features
 
-Wait for Asterisk: Ensures the Asterisk socket is active before executing commands.
+- Wait for Asterisk: Ensures the Asterisk socket is active before executing commands.
 
-Network Stability: Includes a 20-second delay for full network stabilization.
+- Network Stability: Includes a 20-second delay for full network stabilization.
 
-Retry Logic: Intelligent up to 10-time retry mechanism with link verification.
+- Retry Logic: Intelligent up to 10-time retry mechanism with link verification.
 
-Automated: Runs silently in the background as a system service.
+- Automated: Runs silently in the background as a system service.
 
-Verifies successful link before exiting
+- Verifies successful link before exiting
 
-Prevents false "connected" states
+- Prevents false "connected" states
 
 ## 🛠 Installation Guide
 
