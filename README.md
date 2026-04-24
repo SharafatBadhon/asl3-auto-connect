@@ -12,6 +12,10 @@ Retry Logic: Intelligent up to 10-time retry mechanism with link verification.
 
 Automated: Runs silently in the background as a system service.
 
+Verifies successful link before exiting
+
+Prevents false "connected" states
+
 ## 🛠 Installation Guide
 
 ## STEP 1: Create the Script File
@@ -61,11 +65,11 @@ done
 echo "LINK FAILED AFTER RETRIES"
 exit 1
 ```
-⚠️ <ins>IMPORTANT</ins>: Change these values:
+⚠️ $${\color{red}IMPORTANT}$$ : Change these values:
 
-NODE=YOUR_NODE_NUMBER
+NODE=YOUR NODE NUMBER
 
-TARGET=TARGET_NODE_NUMBER
+TARGET=TARGET NODE NUMBER
 
 
 ## STEP 3: Save and Exit
