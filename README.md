@@ -28,8 +28,8 @@ Copy and paste the code below into the editor. Update the NODE and TARGET variab
 ```Bash
 #!/bin/bash
 
-NODE=(Your Node Number)
-TARGET=(Target Node Number)
+NODE=67028
+TARGET=67163
 
 # Wait for Asterisk socket
 while ! asterisk -rx "core show uptime" >/dev/null 2>&1
@@ -61,7 +61,7 @@ done
 echo "LINK FAILED AFTER RETRIES"
 exit 1
 ```
-⚠️ IMPORTANT: Change these values:
+⚠️ <ins>IMPORTANT</ins>: Change these values:
 
 NODE=YOUR_NODE_NUMBER
 
