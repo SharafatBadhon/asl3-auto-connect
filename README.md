@@ -22,7 +22,9 @@ This project provides a robust bash script and systemd service to automatically 
 
 Open your terminal and create the script file using the following command:
 
-`sudo nano /usr/local/bin/asl-autolink.sh`
+```Bash
+sudo nano /usr/local/bin/asl-autolink.sh
+```
 
 
 ## STEP 2: Paste the Script
@@ -86,14 +88,18 @@ To save the changes in the nano editor:
 
 Run this command to allow the system to execute the script:
 
-`sudo chmod +x /usr/local/bin/asl-autolink.sh`
+```Bash
+sudo chmod +x /usr/local/bin/asl-autolink.sh
+```
 
 
 ## STEP 5: Create Systemd Service
 
 Create a service file so the script runs automatically on boot:
 
-`sudo nano /etc/systemd/system/asl-autolink.service`
+```Bash
+sudo nano /etc/systemd/system/asl-autolink.service
+```
 
 
 Paste the following configuration:
@@ -116,7 +122,8 @@ WantedBy=multi-user.target
 Save and Exit as shown in Step 3.
 
 ## STEP 6: Enable & Activate the Service
-```
+
+```Bash
 sudo systemctl daemon-reload
 sudo systemctl enable asl-autolink.service
 sudo systemctl start asl-autolink.service
@@ -124,16 +131,22 @@ sudo systemctl start asl-autolink.service
 
 ## Step 7: Start Service
 
-`sudo systemctl start asl-autolink.service`
+```Bash
+sudo systemctl start asl-autolink.service
+```
 
 ## STEP 8: Check if it connected
 Open Asterisk CLI:
 
-`sudo asterisk -rvvv`
+```Bash
+sudo asterisk -rvvv
+```
 
 Then type:
 
-`rpt lstats 67028`
+```Bash
+rpt lstats 67028
+```
 
 ⚠️ $${\color{red}IMPORTANT}$$ : Change these values:
 
@@ -151,14 +164,18 @@ Check Logs (IMPORTANT)
 
 To see the real-time status of the connection:
 
-`journalctl -u asl-autolink.service -b --no-pager`
+```Bash
+journalctl -u asl-autolink.service -b --no-pager
+```
 
 
 ## Step 10: Reboot Test
 
 Perform a full test by rebooting your Pi:
 
-`sudo reboot`
+```Bash
+sudo reboot
+```
 
 
 73! de S21BAD
