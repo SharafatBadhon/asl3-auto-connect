@@ -178,4 +178,5 @@ sudo reboot
 ```
 
 
-73! de S21BAD
+
+73! de S21BAD 📡🇧🇩
