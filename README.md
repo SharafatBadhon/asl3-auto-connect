@@ -61,7 +61,11 @@ done
 echo "LINK FAILED AFTER RETRIES"
 exit 1
 ```
+⚠️ IMPORTANT: Change these values:
 
+NODE=YOUR_NODE_NUMBER
+
+TARGET=TARGET_NODE_NUMBER
 
 
 ## STEP 3: Save and Exit
@@ -114,20 +118,23 @@ sudo systemctl enable asl-autolink.service
 sudo systemctl start asl-autolink.service
 ```
 
-📊 Monitoring & Testing
+## Step 7: Start Service
 
-Check Logs
+`sudo systemctl start asl-autolink.service`
+
+## Step 8: 📊 Monitoring & Testing
+Check Logs (IMPORTANT)
 
 To see the real-time status of the connection:
 
-journalctl -u asl-autolink.service -b --no-pager
+`journalctl -u asl-autolink.service -b --no-pager`
 
 
-Reboot Test
+## Step 9: Reboot Test
 
 Perform a full test by rebooting your Pi:
 
-sudo reboot
+`sudo reboot`
 
 
 73! de S21BAD
