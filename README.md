@@ -135,6 +135,10 @@ Then type:
 
 `rpt lstats 67028`
 
+⚠️ $${\color{red}IMPORTANT}$$ : Change these values:
+
+rpt lstats (ENTER YOUR NODE NUMBER)
+
  ### 👉 You should see something like that:
 
 | NODE  | PEER           | RECONNECTS | DIRECTION | CONNECT TIME | CONNECT STATE |
